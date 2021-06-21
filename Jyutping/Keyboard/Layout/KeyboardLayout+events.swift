@@ -50,9 +50,10 @@ private extension KeyboardLayout {
         eventRows[2].append(.shadowBackspace)
         eventRows[2].append(.backspace)
         let comma: KeyboardEvent = .key(.cantoneseComma)
+        let period: KeyboardEvent = .key(.period)
         let bottomEvents: [KeyboardEvent] = needsInputModeSwitchKey ?
-            [.switchTo(.cantoneseNumeric), .switchInputMethod, .space, comma, .newLine] :
-            [.switchTo(.cantoneseNumeric), comma, .space, .newLine]
+            [.switchTo(.cantoneseNumeric), .switchInputMethod, period, .space, comma, .newLine] :
+            [.switchTo(.cantoneseNumeric), period, .space, comma, .newLine]
         eventRows.append(bottomEvents)
         return eventRows
     }
@@ -72,9 +73,10 @@ private extension KeyboardLayout {
         eventRows[2].append(.shadowBackspace)
         eventRows[2].append(.backspace)
         let comma: KeyboardEvent = .key(.cantoneseComma)
+        let period: KeyboardEvent = .key(.period)
         let bottomEvents: [KeyboardEvent] = needsInputModeSwitchKey ?
-            [.switchTo(.cantoneseNumeric), .switchInputMethod, .space, comma, .newLine] :
-            [.switchTo(.cantoneseNumeric), comma, .space, .newLine]
+            [.switchTo(.cantoneseNumeric), .switchInputMethod, period, .space, comma, .newLine] :
+            [.switchTo(.cantoneseNumeric), period, .space, comma, .newLine]
         eventRows.append(bottomEvents)
         return eventRows
     }
@@ -355,11 +357,11 @@ private extension KeyboardLayout {
         // eventRows[2].insert(.shadowKey("Z"), at: 1)
         // eventRows[2].append(.shadowBackspace)
         eventRows[2].append(.backspace)
-        let period: KeyboardEvent = .key(.period)
-        let coma: KeyboardEvent = .key(.cantoneseComma)
+        let cirillicUppercasedÖ: KeyboardEvent = .key(.cirillicUppercasedÖ)
+        let cirillicUppercadedI: KeyboardEvent = .key(.cirillicUppercasedI)
         let bottomEvents: [KeyboardEvent] = needsInputModeSwitchKey ?
-            [.switchTo(.numeric), .switchInputMethod, .space, period, .newLine] :
-            [.switchTo(.numeric), period, .space, coma, .newLine]
+            [.switchTo(.numeric), .switchInputMethod, cirillicUppercasedÖ, .space, cirillicUppercadedI, .newLine] :
+            [.switchTo(.numeric), cirillicUppercasedÖ, .space, cirillicUppercadedI, .newLine]
         eventRows.append(bottomEvents)
         return eventRows
     }
