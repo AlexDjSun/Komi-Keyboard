@@ -18,7 +18,7 @@
                BlueprintIdentifier = "3759F44E262FBA0500266086"
                BuildableName = "Keyboard.appex"
                BlueprintName = "Keyboard"
-               ReferencedContainer = "container:Jyutping.xcodeproj">
+               ReferencedContainer = "container:KomiKeyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -32,7 +32,7 @@
                BlueprintIdentifier = "3759F417262FB65C00266086"
                BuildableName = "Jyutping.app"
                BlueprintName = "Jyutping"
-               ReferencedContainer = "container:Jyutping.xcodeproj">
+               ReferencedContainer = "container:KomiKeyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "3759F417262FB65C00266086"
             BuildableName = "Jyutping.app"
             BlueprintName = "Jyutping"
-            ReferencedContainer = "container:Jyutping.xcodeproj">
+            ReferencedContainer = "container:KomiKeyboard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "3759F417262FB65C00266086"
             BuildableName = "Jyutping.app"
             BlueprintName = "Jyutping"
-            ReferencedContainer = "container:Jyutping.xcodeproj">
+            ReferencedContainer = "container:KomiKeyboard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

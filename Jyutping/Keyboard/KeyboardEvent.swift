@@ -23,6 +23,22 @@ struct KeySeat: Hashable {
 
         var hasChildren: Bool { !children.isEmpty }
 
+        static let cirillicÖ: KeySeat = {
+                let cirillicÖ: KeyElement = KeyElement(text: "ӧ")
+                let period: KeyElement = KeyElement(text: ".")
+                let comma: KeyElement = KeyElement(text: ",")
+                let questionMark: KeyElement = KeyElement(text: "?")
+                let exclamationMark: KeyElement = KeyElement(text: "!")
+                return KeySeat(primary: cirillicÖ, children: [period, comma, questionMark, exclamationMark])
+        }()
+        static let cirillicI: KeySeat = {
+                let cirillicI: KeyElement = KeyElement(text: "і")
+                let period: KeyElement = KeyElement(text: ".")
+                let comma: KeyElement = KeyElement(text: ",")
+                let questionMark: KeyElement = KeyElement(text: "?")
+                let exclamationMark: KeyElement = KeyElement(text: "!")
+                return KeySeat(primary: cirillicI, children: [period, comma, questionMark, exclamationMark])
+        }()
         static let period: KeySeat = {
                 let period: KeyElement = KeyElement(text: ".")
                 let comma: KeyElement = KeyElement(text: ",")
@@ -31,10 +47,10 @@ struct KeySeat: Hashable {
                 return KeySeat(primary: period, children: [period, comma, questionMark, exclamationMark])
         }()
         static let cantoneseComma: KeySeat = {
-                let comma: KeyElement = KeyElement(text: "，")
-                let period: KeyElement = KeyElement(text: "。")
-                let questionMark: KeyElement = KeyElement(text: "？")
-                let exclamationMark: KeyElement = KeyElement(text: "！")
+                let comma: KeyElement = KeyElement(text: ",")
+                let period: KeyElement = KeyElement(text: ".")
+                let questionMark: KeyElement = KeyElement(text: "?")
+                let exclamationMark: KeyElement = KeyElement(text: "!")
                 return KeySeat(primary: comma, children: [comma, period, questionMark, exclamationMark])
         }()
         static let separator: KeySeat = KeySeat(primary: KeyElement(text: "'", footer: "分隔"))
