@@ -59,11 +59,7 @@ extension KeyView {
                 case .key(let keySeat):
                         guard peekingText == nil else { return }
                         let text: String = keySeat.primary.text
-                        if layout.isCantoneseMode {
-                                controller.inputText += text
-                        } else {
                                 controller.insert(text)
-                        }
                         AudioFeedback.perform(.input)
                         switch layout {
                         case .alphabetic(.uppercased):
