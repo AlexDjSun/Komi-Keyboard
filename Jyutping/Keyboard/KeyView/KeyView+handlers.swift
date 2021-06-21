@@ -3,6 +3,19 @@ import UIKit
 extension KeyView {
     func handleBackspace() {
         performBackspace()
+        guard
+            let isSpaceAhead: Bool = controller.textDocumentProxy.documentContextBeforeInput?.suffix(2).contains(". "),
+            isSpaceAhead else {
+            return
+        }
+        switch layout {
+        case .cantonese(.lowercased):
+            controller.keyboardLayout = .cantonese(.uppercased)
+        case .alphabetic(.lowercased):
+            controller.keyboardLayout = .alphabetic(.uppercased)
+        default:
+            break
+        }
         guard backspaceTimer == nil && repeatingBackspaceTimer == nil else {
             backspaceTimer?.invalidate()
             repeatingBackspaceTimer?.invalidate()
@@ -124,7 +137,15 @@ extension KeyView {
             return
         }
         controller.textDocumentProxy.deleteBackward()
-        let text: String = layout.isEnglishMode ? ". " : "。"
+        let text: String = ". "
+        switch layout {
+        case .cantonese(.lowercased):
+            controller.keyboardLayout = .cantonese(.uppercased)
+        case .alphabetic(.lowercased):
+            controller.keyboardLayout = .alphabetic(.uppercased)
+        default:
+            break
+        }
         controller.insert(text)
         AudioFeedback.perform(.input)
     }
