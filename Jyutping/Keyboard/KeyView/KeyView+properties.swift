@@ -75,7 +75,7 @@ extension KeyView {
                 case .key(let seat):
                         return seat.primary.text
                 case .space:
-                        return layout.isEnglishMode ? "English" : "粵拼"
+                        return layout.isEnglishMode ? "Коми" : "Latin"
                 case .newLine:
                         return newLineKeyText
                 case .switchTo(let newLayout):
@@ -96,34 +96,34 @@ extension KeyView {
                 }
         }
         private var newLineKeyText: String {
-                guard let returnKeyType: UIReturnKeyType = controller.textDocumentProxy.returnKeyType else { return "換行" }
+                guard let returnKeyType: UIReturnKeyType = controller.textDocumentProxy.returnKeyType else { return "Визь" }
                 switch returnKeyType {
                 case .continue:
-                        return "繼續"
+                        return "Водзӧ"
                 case .default:
-                        return "換行"
+                        return "Вудж"
                 case .done:
-                        return "完成"
+                        return "Дась"
                 case .emergencyCall:
-                        return "緊急"
+                        return "Вудж"
                 case .go:
-                        return "前往"
+                        return "Вудж"
                 case .google:
-                        return "谷歌"
+                        return "Корсь"
                 case .join:
-                        return "加入"
+                        return "Пыр"
                 case .next:
-                        return "下一個"
+                        return "Водзӧ"
                 case .route:
-                        return "路線"
+                        return "Мун"
                 case .search:
-                        return "搜尋"
+                        return "Корсь"
                 case .send:
-                        return "傳送"
+                        return "Ысты"
                 case .yahoo:
-                        return "雅虎"
+                        return "Корсь"
                 @unknown default:
-                        return "換行"
+                        return "Визь"
                 }
         }
 

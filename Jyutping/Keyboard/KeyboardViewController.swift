@@ -121,7 +121,15 @@ final class KeyboardViewController: UIInputViewController {
         case .numbersAndPunctuation:
             return .numeric
         default:
-            return .cantonese(.lowercased)
+            if textDocumentProxy.documentContextBeforeInput.hasContent {
+                if textDocumentProxy.documentContextBeforeInput!.last!.isNewline {
+                    return .alphabetic(.uppercased)
+                } else {
+                    return .alphabetic(.lowercased)
+                }
+            } else {
+                return .alphabetic(.uppercased)
+            }
         }
     }
     var keyboardLayout: KeyboardLayout = .cantonese(.lowercased) {

@@ -125,8 +125,8 @@ final class YueEngSwitch: UIButton {
                 engLabel.textAlignment = .center
                 yueLabel.textColor = isDarkAppearance ? .white : .black
                 engLabel.textColor = isDarkAppearance ? .white : .black
-                yueLabel.text = "粵"
-                engLabel.text = "EN"
+                yueLabel.text = "LA"
+                engLabel.text = "KO"
                 if switched {
                         yueLabel.font = .systemFont(ofSize: 12)
                         engLabel.font = .systemFont(ofSize: 13)
