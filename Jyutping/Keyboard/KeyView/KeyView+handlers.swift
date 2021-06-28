@@ -3,19 +3,6 @@ import UIKit
 extension KeyView {
     func handleBackspace() {
         performBackspace()
-        guard
-            let isSpaceAhead: Bool = controller.textDocumentProxy.documentContextBeforeInput?.suffix(2).contains(". "),
-            isSpaceAhead else {
-            return
-        }
-        switch layout {
-        case .cantonese(.lowercased):
-            controller.keyboardLayout = .cantonese(.uppercased)
-        case .alphabetic(.lowercased):
-            controller.keyboardLayout = .alphabetic(.uppercased)
-        default:
-            break
-        }
         guard backspaceTimer == nil && repeatingBackspaceTimer == nil else {
             backspaceTimer?.invalidate()
             repeatingBackspaceTimer?.invalidate()
@@ -38,6 +25,39 @@ extension KeyView {
                     return
                 }
                 self.performBackspace()
+            }
+        }
+        // Changing layouts to uppercase after punctuation with space
+        // Need to fix: backspace perform stops on the newline
+        let textBeforeInput = controller.textDocumentProxy.documentContextBeforeInput
+        if textBeforeInput != nil {
+            if textBeforeInput!.suffix(2).contains(". ") || textBeforeInput!.suffix(2).contains("! ") || textBeforeInput!.suffix(2).contains("? ") {
+                switch layout {
+                case .cantonese(.lowercased):
+                    controller.keyboardLayout = .cantonese(.uppercased)
+                case .alphabetic(.lowercased):
+                    controller.keyboardLayout = .alphabetic(.uppercased)
+                default:
+                    return
+                }
+            }
+            if textBeforeInput!.last!.isLowercase && controller.keyboardLayout != .alphabetic(.capsLocked) || controller.keyboardLayout != .cantonese(.capsLocked) {
+                switch layout {
+                case .cantonese(.uppercased):
+                    controller.keyboardLayout = .cantonese(.lowercased)
+                case .alphabetic(.uppercased):
+                    controller.keyboardLayout = .alphabetic(.lowercased)
+                default:
+                    return                }
+            }
+        } else {
+            switch layout {
+            case .cantonese(.lowercased):
+                controller.keyboardLayout = .cantonese(.uppercased)
+            case .alphabetic(.lowercased):
+                controller.keyboardLayout = .alphabetic(.uppercased)
+            default:
+                return
             }
         }
     }
@@ -103,6 +123,14 @@ extension KeyView {
     func handleNewLine() {
         guard !(controller.inputText.isEmpty) else {
             controller.insert("\n")
+            switch layout {
+            case .cantonese(.lowercased):
+                controller.keyboardLayout = .cantonese(.uppercased)
+            case .alphabetic(.lowercased):
+                controller.keyboardLayout = .alphabetic(.uppercased)
+            default:
+                break
+            }
             AudioFeedback.perform(.input)
             return
         }
