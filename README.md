@@ -7,10 +7,8 @@ Komi keyboard for iOS
         <img src="images/app-store-badge.svg" alt="App Store badge" width="150"/>
         
 ## Screenshots
-<img src="images/wl.png" alt="screenshots" width="220"/>
-<img src="images/dk.png" alt="screenshots" width="220"/>
-<img src="images/wk.png" alt="screenshots" width="220"/>
-<img src="images/dl.png" alt="screenshots" width="220"/>
+<img src="images/wl.png" alt="screenshots" width="240"/>
+<img src="images/dk.png" alt="screenshots" width="240"/>
 
 ## Running compatibility
 iOS 13.0+
