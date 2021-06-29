@@ -5,9 +5,12 @@ Komi keyboard for iOS
 
 <a href="https://apps.apple.com/app/id1536776621">
         <img src="images/app-store-badge.svg" alt="App Store badge" width="150"/>
-</a>
-<br>
-</a>
+        
+## Screenshots
+<img src="images/wl.png" alt="screenshots" width="220"/>
+<img src="images/dk.png" alt="screenshots" width="220"/>
+<img src="images/wk.png" alt="screenshots" width="220"/>
+<img src="images/dl.png" alt="screenshots" width="220"/>
 
 ## Running compatibility
 iOS 13.0+
